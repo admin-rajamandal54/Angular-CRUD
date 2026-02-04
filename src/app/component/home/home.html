@@ -1,0 +1,93 @@
+<div class="wrapper rounded bg-white">
+
+    <div class="h3">Registration Form</div>
+    <form [formGroup]="UserForm">
+        <div class="form">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>First Name</label>
+                    <input type="text" name="FirstName" formControlName="FirstName" class="form-control" required>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>Last Name</label>
+                    <input type="text" name="LastName" formControlName="LastName" class="form-control" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>Birthday</label>
+                    <input type="date" name="DOB" formControlName="DOB" class="form-control" required>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>Gender</label>
+                    <div class="d-flex align-items-center mt-2">
+                        <label class="option">
+                            <input type="radio" formControlName="Gender" value="Male">Male
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="option ms-4">
+                            <input type="radio" formControlName="Gender" value="Female">Female
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>Email</label>
+                    <input type="email" name="Email" formControlName="Email" class="form-control" required>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <label>Phone Number</label>
+                    <input type="tel" name="Phone" formControlName="Phone" class="form-control" required>
+                </div>
+            </div>
+            <div class=" my-md-2 my-3">
+                <label>Subject</label>
+                <select id="sub" required name="Subject" formControlName="Subject">
+                    <option value="" selected hidden>Choose Option</option>
+                    <option value="Maths">Maths</option>
+                    <option value="Science">Science</option>
+                    <option value="Social">Social</option>
+                    <option value="Hindi">Hindi</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary mt-3" (click)="submitData()">Submit</button>
+        </div>
+    </form>
+
+</div>
+
+
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of UserData; track item) {
+        <tr>
+            <td>{{item.FirstName}}</td>
+            <td>{{item.LastName}}</td>
+            <td>{{item.DOB}}</td>
+            <td>{{item.Gender}}</td>
+            <td>{{item.Email}}</td>
+            <td>{{item.Phone}}</td>
+            <td>{{item.Subject}}</td>
+            <td>
+                <span (click)="GetDetailById(item.id)">Edit</span>
+                <span (click)="DeleteById(item.id)">Delete</span>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>

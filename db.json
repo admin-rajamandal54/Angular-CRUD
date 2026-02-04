@@ -1,0 +1,24 @@
+{
+  "UserData": [
+    {
+      "id": "e7f4",
+      "FirstName": "Raja",
+      "LastName": "Mandal",
+      "DOB": "2026-02-01",
+      "Gender": "Male",
+      "Email": "raja@gmail.com",
+      "Phone": "9112345824",
+      "Subject": "Science"
+    },
+    {
+      "id": "e1e1",
+      "FirstName": "Biru",
+      "LastName": "Mandal",
+      "DOB": "2026-02-03",
+      "Gender": "Male",
+      "Email": "biru@gmail.com",
+      "Phone": "9112345824",
+      "Subject": "Maths"
+    }
+  ]
+}
